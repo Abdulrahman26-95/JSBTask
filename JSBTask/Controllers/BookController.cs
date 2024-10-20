@@ -40,7 +40,10 @@ namespace JSBTask.Controllers
         {
             var result = await _bookService.AddNewBook(book);
 
-            return Ok(result);
+            if (result)
+                return Ok("تم الاضافة بنجاح");
+            else
+                return Ok("حدث خطأ ما أثناء الاضافة");
         }
 
 
@@ -49,7 +52,10 @@ namespace JSBTask.Controllers
         {
             var result = await _bookService.UpdateBook(book);
 
-            return Ok(result);
+            if (result)
+                return Ok("تم التعديل بنجاح");
+            else
+                return Ok("حدث خطأ ما أثناء التعديل");
         }
 
 
@@ -58,7 +64,10 @@ namespace JSBTask.Controllers
         {
             var result = await _bookService.DeleteBook(bookId);
 
-            return Ok(result);
+            if (result)
+                return Ok("تم الحذف بنجاح");
+            else
+                return Ok("حدث خطأ ما أثناء الحذف");
         }
 
     }

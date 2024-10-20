@@ -23,11 +23,11 @@ namespace JSBTask.Dto
         public AddBookDtoValidator()
         {
             RuleFor(book => book.bookPrice)
-                .GreaterThanOrEqualTo(0)
+                .GreaterThan(0)
                 .WithMessage("برجاء ادخال قيمة غير سالبة لسعر الكتاب");
 
             RuleFor(book => book.stock)
-                .GreaterThanOrEqualTo(0)
+                .GreaterThan(0)
                 .WithMessage("برجاء ادخال قيمة غير سالبة لمخزون الكتاب");
 
             RuleFor(book => book.categoryId)
